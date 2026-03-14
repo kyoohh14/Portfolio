@@ -6,125 +6,162 @@
 <title>John Mark Quico | Portfolio</title>
 
 <style>
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f5f5f5;
-color:#333;
+/* General Styles */
+body {
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:#0f172a;
+  color:white;
+  scroll-behavior:smooth;
 }
 
-header{
-background:#111;
-color:white;
-text-align:center;
-padding:40px 20px;
+/* Header */
+header {
+  text-align:center;
+  padding:100px 20px 60px 20px;
+  background: linear-gradient(135deg,#1e293b,#0f172a);
+  position:relative;
 }
 
-section{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
+header img {
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:4px solid #38bdf8;
+  object-fit:cover;
+  margin-bottom:20px;
 }
 
-h2{
-border-bottom:2px solid #ddd;
-padding-bottom:10px;
+header h1 { font-size:48px; margin:10px 0; }
+header p { font-size:18px; opacity:0.8; }
+
+/* Section Styles */
+section { max-width:1000px; margin:auto; padding:60px 20px; }
+h2 { font-size:32px; margin-bottom:20px; border-left:5px solid #38bdf8; padding-left:12px; }
+
+/* Skills */
+.skills span { display:inline-block; background:#1e293b; padding:10px 16px; margin:6px; border-radius:8px; }
+
+/* Projects & Video Gallery */
+.project, .video-item {
+  background:#1e293b;
+  padding:20px;
+  margin-top:15px;
+  border-radius:12px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.3);
 }
 
-.skills span{
-display:inline-block;
-background:#222;
-color:white;
-padding:8px 12px;
-margin:5px;
-border-radius:6px;
-font-size:14px;
+.video-gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
 }
 
-.project{
-background:white;
-padding:20px;
-margin-top:15px;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+.video-item img {
+  width:100%;
+  border-radius:12px;
+  cursor:pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.video-item img:hover {
+  transform: scale(1.05);
+  box-shadow:0 8px 20px rgba(56,189,248,0.6);
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#111;
-color:white;
-}
+/* Contact & Footer */
+.contact { text-align:center; }
+footer { text-align:center; padding:30px; background:#020617; margin-top:40px; }
+
+/* Responsive iframe */
+iframe { width:100%; height:450px; border-radius:12px; border:none; margin-top:20px; }
 </style>
 </head>
 
 <body>
 
 <header>
+<img src="assets/profile.jpg" alt="John Mark Quico">
 <h1>John Mark Quico</h1>
-<p>Video Editor | Electrical Engineer | Creative Designer</p>
+<p>Video Editor | Licensed Electrical Engineer | Creative Designer</p>
 </header>
 
 <section>
 <h2>About Me</h2>
-<p>
-I am John Mark Quico, a graduate of Bachelor of Science in Electrical Engineering and a board exam passer. 
-Aside from engineering, I have a strong passion for video editing and digital design. 
-I enjoy creating engaging visual content and combining creativity with technical precision.
-</p>
+<p>I am a licensed Electrical Engineer and passionate video editor who enjoys creating engaging visual content. 
+I specialize in video editing, graphic design, and AutoCAD drafting. I combine technical knowledge with creativity 
+to produce high-quality digital content and presentations.</p>
 </section>
 
 <section>
 <h2>Skills</h2>
 <div class="skills">
-<span>Video Editing</span>
-<span>Graphic Design</span>
-<span>AutoCAD Design</span>
-<span>Content Creation</span>
-<span>Visual Storytelling</span>
+<span>Video Editing</span><span>Graphic Design</span><span>AutoCAD Design</span><span>Content Creation</span><span>Visual Storytelling</span>
 </div>
 </section>
 
 <section>
 <h2>Software</h2>
 <div class="skills">
-<span>Filmora</span>
-<span>Adobe Premiere Pro</span>
-<span>Adobe Photoshop</span>
-<span>AutoCAD</span>
-<span>Canva</span>
+<span>Filmora</span><span>Adobe Premiere Pro</span><span>Adobe Photoshop</span><span>AutoCAD</span><span>Canva</span>
 </div>
 </section>
 
 <section>
 <h2>Projects</h2>
-
 <div class="project">
-<h3>NDRM Competition Video</h3>
-<p>Edited and produced a video presentation for the NDRM competition using creative transitions, organized footage, and visual storytelling.</p>
+<h3>NDRM Competition</h3>
+<p>Edited and produced a competition video presentation with storytelling and professional transitions.</p>
 </div>
-
 <div class="project">
 <h3>Bukidnon Video Project</h3>
-<p>Created video content showcasing Bukidnon through cinematic editing, color correction, and engaging visuals.</p>
+<p>Created cinematic travel-style content highlighting the beauty and environment of Bukidnon.</p>
 </div>
-
 <div class="project">
 <h3>PPE Design Presentation</h3>
-<p>Designed presentation materials and visuals about Personal Protective Equipment using Photoshop and Canva.</p>
+<p>Designed visual presentation materials explaining personal protective equipment and safety concepts.</p>
 </div>
-
 </section>
 
 <section>
+<h2>Video Portfolio</h2>
+<div class="video-gallery">
+
+<div class="video-item">
+<img src="assets/thumbnail1.jpg" alt="NDRM Competition" onclick="openVideo('https://www.youtube.com/embed/VIDEOID1')">
+<p>NDRM Competition</p>
+</div>
+
+<div class="video-item">
+<img src="assets/thumbnail2.jpg" alt="Bukidnon Project" onclick="openVideo('https://www.youtube.com/embed/VIDEOID2')">
+<p>Bukidnon Project</p>
+</div>
+
+<div class="video-item">
+<img src="assets/thumbnail3.jpg" alt="PPE Design" onclick="openVideo('https://www.youtube.com/embed/VIDEOID3')">
+<p>PPE Design</p>
+</div>
+
+</div>
+
+<iframe id="videoPlayer" src="" allowfullscreen></iframe>
+</section>
+
+<section class="contact">
 <h2>Contact</h2>
 <p>Email: your@email.com</p>
-<p>Phone: your number</p>
+<p>Location: Philippines</p>
 </section>
 
 <footer>
-<p>© 2026 John Mark Quico Portfolio</p>
+<p>© 2026 John Mark Quico | Portfolio</p>
 </footer>
+
+<script>
+function openVideo(url){
+  document.getElementById('videoPlayer').src = url;
+  window.scrollTo({ top: document.getElementById('videoPlayer').offsetTop - 20, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
